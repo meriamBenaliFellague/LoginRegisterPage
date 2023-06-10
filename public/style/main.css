@@ -157,6 +157,21 @@ form > input:focus {
     width: 350px;
 }
 
+.profile{
+    display: grid;
+    place-items: center;
+}
+
+.profile > img{
+    width: 390px;
+    margin-top: 2rem;
+}
+
+h2{
+    font-size: 39px;
+    margin-top: 1.5rem;
+}
+
 footer {
     background-color: #48014b;
     color: #fff;

@@ -19,7 +19,11 @@ app.get('/login', (req, res) => {
 app.post('/login', (req, res) => {
     const { email, password } = req.body;
     console.log(email, password);
-    return res.redirect('/');
+    if (password == 'meriam' && email == 'be2430423@gmail.com') {
+        return res.redirect('/profile');
+    }else{
+        return res.render('404');
+    }
 });
 
 app.get('/register', (req, res) => {
@@ -29,7 +33,20 @@ app.get('/register', (req, res) => {
 app.post('/register', (req, res) => {
     const { email, password, dateOfBirth, name } = req.body;
     console.log(email, password, dateOfBirth, name);
-    return res.redirect('/'); 
+    return res.redirect('/profile2'); 
+});
+
+app.get('/profile', (req, res) => {
+    return res.render('profile');
+});
+
+app.post('/profile', (req, res) => {
+    return res.redirect('/');
+});
+
+app.get('/profile2', (req, res) => {
+    return res.render('profile2');
+
 });
 
 app.get('*', (req, res) => {
